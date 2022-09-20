@@ -6,6 +6,7 @@ TagManager:
   tags:
   - machine
   - material
+  - cloth
   layers:
   - Default
   - TransparentFX
