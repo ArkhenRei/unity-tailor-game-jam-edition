@@ -5,27 +5,40 @@ using UnityEngine;
 public class fabric_controller : MonoBehaviour
 {
     [SerializeField] float speedVer = 1f;
-    [SerializeField] float speedHor = 0.5f;
-    [SerializeField] float delay = 1f;
-    float locationDistruption;
+    [SerializeField] GameObject endCanvas;
+    [SerializeField] GameObject needle;
+    [SerializeField] GameObject badScore, goodScore, aveScore;
+    public float speedHor;
+    public string quality;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        StartCoroutine("waitForRandomNumber");
-        transform.Translate(Input.GetAxis("Horizontal") * speedHor + locationDistruption * speedHor, Time.deltaTime * speedVer, 0, Space.World);
+        transform.Translate(Input.GetAxis("Mouse X") * speedHor * Time.deltaTime, Time.deltaTime * speedVer, 0, Space.World);
+        quality = needle.GetComponent<needle_controller>().qua;
     }
-    IEnumerator waitForRandomNumber()
+    private void OnBecameInvisible()
     {
-        yield return new WaitForSeconds(delay);
-
-        locationDistruption = Random.Range(-1, 1);
+        endCanvas.SetActive(true);
+        if (quality == "bad")
+        {
+            badScore.SetActive(true);
+        }
+        else if (quality == "good")
+        {
+            goodScore.SetActive(true);
+        }
+        else if (quality == "ave")
+        {
+            aveScore.SetActive(true);
+        }
+        Time.timeScale = 0f;
         
     }
 }
