@@ -1,37 +1,45 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
 public class GameCT : MonoBehaviour
 {
-
+    public int day = 0;
+    public int maxCust = 5;
+    public int currenCust = 0;
+    public TextMeshProUGUI dayKeep;
+    public GameObject NextDay;
     public TextMeshProUGUI SpeechBubble;
     public GameObject panel;
     public string[] words = new string[10];
     public int sayac = 0;
     public GameObject machine;
-    public GameObject speech;
+    public GameObject iron;
 
+    public bool Didİron =false;
+    public bool DidMachine =false;
     public void Start()
     {
-        words[0] = "Can you repair my coats?";
-        words[1] = "Thank you so much.";
+
         
 
     }
-    // Start is called before the first frame update
+
     public void Update()
     {
 
-        if (machine.GetComponent<machineCT>().isCompleted)
-        {
-            Invoke("text", 1f);
-            machine.GetComponent<machineCT>().isCompleted = false;
-            Invoke("close", 3f);
+        dayKeep.text = "Day" + " " + day.ToString();
 
+        if (currenCust > maxCust)
+        {
+            if (NextDay.activeSelf == false)
+            {
+                NextDay.SetActive(true);
+            }
 
         }
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             panel.SetActive(true);
@@ -47,23 +55,17 @@ public class GameCT : MonoBehaviour
     }
 
 
-    public void text()
-    {
-        SpeechBubble.text = words[sayac];
-        sayac++;
-        
-
-    }
     public void nextCustomer()
     {
-        speech.SetActive(true);
-        SpeechBubble.text = "Hi";
-        Invoke("text", 2f);
+        DidMachine = false;
+        Didİron = false;
+        currenCust++;
         
     }
-    public void close()
+    public void nextDayy()
     {
-        SpeechBubble.text = "";
-        speech.SetActive(false);
+        day++;
+        currenCust = 0;
+        NextDay.SetActive(false);
     }
 }

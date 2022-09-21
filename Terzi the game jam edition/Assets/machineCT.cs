@@ -6,6 +6,7 @@ public class machineCT : MonoBehaviour
 {
     public GameObject start;
     public GameObject button;
+    public GameObject MoneyCT;
     public Renderer rend;
     public Color colorTurnTo = Color.white;
     public bool canStart;
@@ -33,11 +34,19 @@ public class machineCT : MonoBehaviour
     }
     public void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "material")
+        if (collision.gameObject.tag == "fabric")
         {
+            MoneyCT.GetComponent<MoneyCT>().usedFabric++;
             rend.material.color = colorTurnTo;
             button.SetActive(true);
             
+        }
+        if (collision.gameObject.tag == "rope")
+        {
+            MoneyCT.GetComponent<MoneyCT>().usedRope++;
+            rend.material.color = colorTurnTo;
+            button.SetActive(true);
+
         }
     }
 }

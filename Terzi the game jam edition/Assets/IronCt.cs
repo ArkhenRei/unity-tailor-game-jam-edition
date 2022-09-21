@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,9 +11,12 @@ public class IronCt : MonoBehaviour
     public float neededTime = 1000000f;
     public float keepTime =0f;
     public Vector2 velocityIron;
-    public GameObject clothes;
-    public GameObject collisionG;
-    public bool isCompleted= false;
+    public GameObject tamirli;
+    public GameObject hasarli;
+    public GameObject gameCT;
+    public int cust;
+    public int samecust =1;
+    public bool canIron= false;
 
     private void Awake()
     {
@@ -23,13 +26,23 @@ public class IronCt : MonoBehaviour
     }
     void Update()
     {
-        if (_dragging == false)
+        cust = gameCT.GetComponent<GameCT>().currenCust;
+        if (cust > 0 && cust == samecust && gameCT.GetComponent<GameCT>().Didİron)
+        {
+            canIron = true;
+        }
+       
+        if (!_dragging)
         {
             transform.position = Vector3.Lerp(transform.position, defaultPosition, 3f * Time.deltaTime);
         }
-        if (!_dragging) return;
-        var mousePosition = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        transform.position = mousePosition;
+        if (_dragging)
+        {
+            var mousePosition = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            transform.position = mousePosition;
+
+        }
+       
     }
     // Start is called before the first frame update
     private void OnMouseDown()
@@ -51,8 +64,12 @@ public class IronCt : MonoBehaviour
     {
         if (collision.gameObject.tag == "cloth")
         {
-            Invoke("playSteam",1f);
-            collisionG = collision.gameObject;
+            if (canIron == true)
+            {
+                Invoke("playSteam", 1f);
+                hasarli = collision.gameObject;
+            }
+           
             
             
 
@@ -70,9 +87,15 @@ public class IronCt : MonoBehaviour
     {
 
         steam.Play();
-        collisionG.SetActive(false);
-        clothes.gameObject.SetActive(true);
-        isCompleted = true;
+        hasarli.SetActive(false);
+        tamirli.gameObject.SetActive(true);
+        canIron=false;
+        gameCT.GetComponent<GameCT>().Didİron = true;
+        samecust++;
+        if (samecust>5)
+        {
+            samecust = 1;
+        }
     }
   
 }
