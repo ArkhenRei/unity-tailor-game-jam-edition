@@ -8,9 +8,11 @@ public class machineCT : MonoBehaviour
     public GameObject button;
     public GameObject MoneyCT;
     public Renderer rend;
+    public Sprite highlight;
+    public Sprite normal;
     public Color colorTurnTo = Color.white;
-    public bool canStart;
     public bool isCompleted = false;
+    public bool canPlay;
     // Start is called before the first frame update
     public void Awake()
     {
@@ -19,6 +21,10 @@ public class machineCT : MonoBehaviour
 
     public void Update()
     {
+        if (gameObject.GetComponent<SpriteRenderer>().sprite == highlight && canPlay== false)
+        {
+            gameObject.GetComponent<SpriteRenderer>().sprite = normal;
+        }
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             start.SetActive(false);
@@ -37,14 +43,16 @@ public class machineCT : MonoBehaviour
         if (collision.gameObject.tag == "fabric")
         {
             MoneyCT.GetComponent<MoneyCT>().usedFabric++;
-            rend.material.color = colorTurnTo;
+            gameObject.GetComponent<SpriteRenderer>().sprite = highlight;
+            canPlay = true;
             button.SetActive(true);
             
         }
         if (collision.gameObject.tag == "rope")
         {
             MoneyCT.GetComponent<MoneyCT>().usedRope++;
-            rend.material.color = colorTurnTo;
+            gameObject.GetComponent<SpriteRenderer>().sprite = highlight;
+            canPlay = true;
             button.SetActive(true);
 
         }
