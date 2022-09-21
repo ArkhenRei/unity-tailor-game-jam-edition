@@ -5,8 +5,8 @@ using UnityEngine;
 public class needle_controller : MonoBehaviour
 {
     Animator myAnimator;
-   [SerializeField] float score = 0, badQua = 958, aveQua = 1916;
-    bool incScore, decScore;
+    [SerializeField] float score = 0, badQua = 958, aveQua = 1916;
+    public bool incScore, decScore, rightNeedle, didIron;
     public string qua;
     // Start is called before the first frame update
     void Start()
@@ -34,17 +34,36 @@ public class needle_controller : MonoBehaviour
         {
             myAnimator.GetComponent<Animator>().enabled = false;
         }
-        if (score <= badQua)
+       
+        if (!didIron && !rightNeedle)
         {
             qua = "bad";
         }
-        else if (score > badQua && score <= aveQua)
+        if (didIron || rightNeedle)
         {
-            qua = "ave";
+            if (score <= badQua)
+            {
+                qua = "bad";
+            }
+            else
+            {
+                qua = "ave";
+            }
         }
-        else
+        if (didIron && rightNeedle)
         {
-            qua = "good";
+            if (score <= badQua)
+            {
+                qua = "bad";
+            }
+            else if (score > badQua && score <= aveQua)
+            {
+                qua = "ave";
+            }
+            else
+            {
+                qua = "good";
+            }
         }
     }
 
