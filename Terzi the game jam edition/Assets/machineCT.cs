@@ -9,13 +9,22 @@ public class machineCT : MonoBehaviour
     public Renderer rend;
     public Color colorTurnTo = Color.white;
     public bool canStart;
+    public bool isCompleted = false;
     // Start is called before the first frame update
     public void Awake()
     {
         rend = GetComponent<Renderer>();
     }
-    
 
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            start.SetActive(false);
+            button.SetActive(false);
+            isCompleted = true;
+        }
+    }
     public void startmachine()
     {
 
@@ -28,6 +37,7 @@ public class machineCT : MonoBehaviour
         {
             rend.material.color = colorTurnTo;
             button.SetActive(true);
+            
         }
     }
 }

@@ -13,6 +13,7 @@ public class IronCt : MonoBehaviour
     public Vector2 velocityIron;
     public GameObject clothes;
     public GameObject collisionG;
+    public bool isCompleted= false;
 
     private void Awake()
     {
@@ -71,6 +72,7 @@ public class IronCt : MonoBehaviour
         steam.Play();
         collisionG.SetActive(false);
         clothes.gameObject.SetActive(true);
+        isCompleted = true;
     }
   
 }
