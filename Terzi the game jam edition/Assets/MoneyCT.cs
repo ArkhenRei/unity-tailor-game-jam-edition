@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MoneyCT : MonoBehaviour
 {
+    public string[] clothes = new string[3];
+    public string[] colours = new string[4];
     public GameObject Fabric;
     public GameObject Rope;
     public int totalMoney;
@@ -24,7 +26,13 @@ public class MoneyCT : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        clothes[0] = "Ceket";
+        clothes[1] = "hayalet";
+        clothes[2] = "pantolon";
+        colours[0] = "mavi";
+        colours[1] = "pembe";
+        colours[2] = "sari";
+        colours[3] = "yesil";
     }
 
     // Update is called once per frame

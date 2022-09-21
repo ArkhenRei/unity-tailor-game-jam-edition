@@ -3587,6 +3587,8 @@ MonoBehaviour:
   totalMoney: 0
   earnToday: 0
   expense: 0
+  needFabric: 0
+  needRope: 0
   usedRope: 0
   usedFabric: 0
   delik: 0
