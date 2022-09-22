@@ -14,6 +14,7 @@ public class machineCT : MonoBehaviour
     public Color colorTurnTo = Color.white;
     public bool isCompleted = false;
     public bool canPlay;
+    [SerializeField] GameObject[] myMinigames;
     // Start is called before the first frame update
     public void Awake()
     {
@@ -85,6 +86,7 @@ public class machineCT : MonoBehaviour
         if (MoneyCT.GetComponent<customer>().RandClot == 3)
         {
             MoneyCT.GetComponent<customer>().cType = true;
+            createMinigame();
         }
         if (!MoneyCT.GetComponent<customer>().cType && iron.GetComponent<IronCt>().canIron)
         {
@@ -97,12 +99,14 @@ public class machineCT : MonoBehaviour
             start.SetActive(true);
             button.SetActive(false);
             MoneyCT.GetComponent<MoneyCT>().isScore = false;
+            createMinigame();
         }
         else if (MoneyCT.GetComponent<customer>().cType && iron.GetComponent<IronCt>().canIron == false)
         {
             start.SetActive(true);
             button.SetActive(false);
             MoneyCT.GetComponent<MoneyCT>().isScore = true;
+            createMinigame();
         }
       
     }
@@ -141,5 +145,11 @@ public class machineCT : MonoBehaviour
         }
         start.SetActive(true);
         button.SetActive(false);
+    }
+    public void createMinigame()
+    {
+        int randomIndex = Random.Range(0, myMinigames.Length);
+
+        GameObject instantiatedObject = Instantiate(myMinigames[randomIndex]);
     }
 }
