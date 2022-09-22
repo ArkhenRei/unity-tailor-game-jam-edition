@@ -12,6 +12,9 @@ public class GameCT : MonoBehaviour
     public GameObject NextDay;
     public GameObject money;
     public TextMeshProUGUI SpeechBubble;
+    public TextMeshProUGUI EarnedMoney;
+    public TextMeshProUGUI TotalMoney;
+    public TextMeshProUGUI Expense;
     public GameObject panel;
     public string[] words = new string[10];
     public int sayac = 0;
@@ -36,7 +39,7 @@ public class GameCT : MonoBehaviour
         {
             if (NextDay.activeSelf == false)
             {
-                NextDay.SetActive(true);
+                endDay();
             }
 
         }
@@ -60,7 +63,23 @@ public class GameCT : MonoBehaviour
     public void nextDayy()
     {
         day++;
-        money.GetComponent<MoneyCT>().cust = 0;
+        GetComponent<MoneyCT>().cust = 0;
         NextDay.SetActive(false);
+        GetComponent<MoneyCT>().earned = 0;
+        GetComponent<MoneyCT>().earnToday = 0;
+        GetComponent<MoneyCT>().expense = 0;
+        GetComponent<MoneyCT>().usedRope = 0;
+        GetComponent<MoneyCT>().usedFabric = 0;
+        
+    }
+    public void endDay()
+    {
+        NextDay.SetActive(true);
+        GetComponent<MoneyCT>().expense = GetComponent<MoneyCT>().usedFabric * 15 + GetComponent<MoneyCT>().usedRope * 10 + 25;
+        GetComponent<MoneyCT>().earnToday = GetComponent<MoneyCT>().expense + GetComponent<MoneyCT>().earned;
+        GetComponent<MoneyCT>().totalMoney = GetComponent<MoneyCT>().totalMoney + GetComponent<MoneyCT>().earned;
+        TotalMoney.text = "Total Money=" + GetComponent<MoneyCT>().totalMoney.ToString();
+        Expense.text = "Expense =" + GetComponent<MoneyCT>().expense.ToString();
+        EarnedMoney.text = "Earned Today=" + GetComponent<MoneyCT>().earnToday.ToString();
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class MoneyCT : MonoBehaviour
 {
@@ -14,6 +15,12 @@ public class MoneyCT : MonoBehaviour
     public GameObject machine;
     public GameObject iron;
 
+    public TextMeshProUGUI usedRopeG;
+    public TextMeshProUGUI usedFabricG;
+
+    public bool DidRope;
+    public bool DidFabric;
+
     public int totalMoney;
     public int earnToday;
     public int expense;
@@ -24,10 +31,12 @@ public class MoneyCT : MonoBehaviour
     public int cust;
     public int currentCust;
     public int keepPort;
+    public int earned;
+    public int score;
+    public int keepMoney;
 
     public bool isChose;
-    public bool needFabric;
-    public bool needRope;
+    
     public bool delik;
     public bool didMachine;
 
@@ -37,6 +46,12 @@ public class MoneyCT : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        score = 0;
+        expense = 0;
+        earned = 0;
+        totalMoney = 100;
+        usedRope = 0;
+        usedFabric = 0;
         cust = 1;
         
         
@@ -57,6 +72,8 @@ public class MoneyCT : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        usedFabricG.text = "Kullanilan Kumas: " + usedFabric.ToString();
+        usedRopeG.text ="Kullanilan ip: " + usedRope.ToString();
         didMachine = machine.GetComponent<machineCT>().isCompleted;
         if (didMachine)
         {
@@ -96,6 +113,8 @@ public class MoneyCT : MonoBehaviour
         
         if (didMachine)
         {
+            DidFabric = false;
+            DidRope = false;
             cust++;
             iron.GetComponent<IronCt>().canIron = true;
             machine.GetComponent<machineCT>().canPlay = false;

@@ -10,6 +10,9 @@ public class customer: MonoBehaviour
     public string[] hasartype = new string[4];
     public GameObject[] fiziksel = new GameObject[5];
 
+    public bool needFabric;
+    public bool needRope;
+
     public GameObject machine;
     public bool didComplete;
 
@@ -39,6 +42,8 @@ public class customer: MonoBehaviour
         didComplete = machine.GetComponent<machineCT>().isCompleted;
         if (didComplete)
         {
+            needRope = false;
+            needFabric = false;
             foreach (var item in GetComponent<customer>().clothesP)
             {
                 item.SetActive(false);
@@ -48,24 +53,34 @@ public class customer: MonoBehaviour
     public void chooseClothes()
     {
         RandClot = 0;
-        RandColo = Random.Range(0, 3);
+        RandColo = Random.Range(0, 4);
         if (RandClot == 0)
         {
             if (RandColo == 0)
             {
+
                     clothesP[0].SetActive(true);
+                needFabric = true;
+                needRope = true;
+                
             }
             else if (RandColo == 1)
             {
                     clothesP[4].SetActive(true);
+                needFabric = true;
+                needRope = true;
             }
             else if (RandColo == 2)
             {
                     clothesP[8].SetActive(true);
+                needFabric = true;
+                needRope = true;
             }
             else if (RandColo == 3)
             {
-                    clothesP[12].SetActive(true);
+                needFabric = true;
+                needRope = true;
+                clothesP[12].SetActive(true);
             }
         }
 
