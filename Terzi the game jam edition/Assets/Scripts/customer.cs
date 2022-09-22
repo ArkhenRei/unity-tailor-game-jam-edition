@@ -5,13 +5,14 @@ using UnityEngine;
 public class customer: MonoBehaviour
 {
     public GameObject[] clothesP = new GameObject[16];
-    public string[] clothes = new string[3];
+    public string[] clothes = new string[6];
     public string[] colours = new string[4];
     public string[] hasartype = new string[4];
     public GameObject[] fiziksel = new GameObject[5];
 
     public bool needFabric;
     public bool needRope;
+    public bool cType;
 
     public GameObject machine;
     public bool didComplete;
@@ -24,9 +25,13 @@ public class customer: MonoBehaviour
 
     private void Start()
     {
-        clothes[0] = "Ceket";
-        clothes[1] = "hayalet";
-        clothes[2] = "pantolon";
+       
+        /*clothes[0] = "coat";
+        clothes[1] = "costume";
+        clothes[2] = "pant";
+        clothes[3] = "sweater";
+        clothes[4] = "Tshirt";
+        clothes[5] = "hoody";*/
         colours[0] = "mavi";
         colours[1] = "pembe";
         colours[2] = "sari";
@@ -52,6 +57,7 @@ public class customer: MonoBehaviour
     }
     public void chooseClothes()
     {
+        cType = false;
         RandClot = 0;
         RandColo = Random.Range(0, 4);
         if (RandClot == 0)
@@ -62,6 +68,7 @@ public class customer: MonoBehaviour
                     clothesP[0].SetActive(true);
                 needFabric = true;
                 needRope = true;
+                
                 
             }
             else if (RandColo == 1)

@@ -33,6 +33,7 @@ public class MoneyCT : MonoBehaviour
     public int keepPort;
     public int earned;
     public int score;
+    public bool isScore;
     public int keepMoney;
 
     public bool isChose;

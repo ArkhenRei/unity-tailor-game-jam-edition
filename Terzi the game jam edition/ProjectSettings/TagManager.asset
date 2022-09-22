@@ -9,6 +9,12 @@ TagManager:
   - cloth
   - fabric
   - rope
+  - Pants
+  - Sweaters
+  - Hoodies
+  - Costumes
+  - Coats
+  - Tshirts
   layers:
   - Default
   - TransparentFX
