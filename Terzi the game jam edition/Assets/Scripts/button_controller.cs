@@ -6,11 +6,13 @@ public class button_controller : MonoBehaviour
 {
     [SerializeField] GameObject StartGame;
     [SerializeField] GameObject EndGame;
+    public GameObject iron;
     public GameObject a;
     public GameObject b;
     public GameObject c;
     public GameObject needle;
     public GameObject moneyCT;
+    public GameObject machine;
     
 
     // Start is called before the first frame update
@@ -33,16 +35,35 @@ public class button_controller : MonoBehaviour
     {
         if (needle.GetComponent<needle_controller>().qua == "good")
         {
-            moneyCT.GetComponent<MoneyCT>().score = 2;
+            if (iron.GetComponent<IronCt>().canIron == false)
+            {
+                moneyCT.GetComponent<MoneyCT>().earned += 15;
+            }
+            else if (iron.GetComponent<IronCt>().canIron == true)
+            {
+                moneyCT.GetComponent<MoneyCT>().earned += 5;
+            }
         }
         else if (needle.GetComponent<needle_controller>().qua == "average")
         {
-            moneyCT.GetComponent<MoneyCT>().score = 1;
+            if (iron.GetComponent<IronCt>().canIron == false)
+            {
+                moneyCT.GetComponent<MoneyCT>().earned += 5;
+            }
+            else if (iron.GetComponent<IronCt>().canIron == true)
+            {
+                moneyCT.GetComponent<MoneyCT>().earned += -5;
+            }
         }
         else if (needle.GetComponent<needle_controller>().qua == "bad")
         {
-            moneyCT.GetComponent<MoneyCT>().score = 0;
+            moneyCT.GetComponent<MoneyCT>().earned += -5;
         }
+        machine.GetComponent<machineCT>().button.SetActive(false);
+        machine.GetComponent<machineCT>().canPlay = false;
+        moneyCT.GetComponent<MoneyCT>().DidFabric = false;
+
+
         Time.timeScale = 1f;
         a.SetActive(false);
         b.SetActive(false);

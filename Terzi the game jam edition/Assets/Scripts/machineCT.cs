@@ -27,7 +27,7 @@ public class machineCT : MonoBehaviour
 
     public void Update()
     {
-        if (MoneyCT.GetComponent<MoneyCT>().DidFabric && MoneyCT.GetComponent<MoneyCT>().DidRope)
+        if (MoneyCT.GetComponent<MoneyCT>().DidFabric)
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = highlight;
             canPlay = true;
@@ -47,14 +47,9 @@ public class machineCT : MonoBehaviour
             MoneyCT.GetComponent<customer>().needFabric = false;
             MoneyCT.GetComponent<MoneyCT>().DidFabric = true;
             MoneyCT.GetComponent<MoneyCT>().usedFabric++;
-
-            
-        }
-        if (collision.gameObject.tag == "rope" && MoneyCT.GetComponent<customer>().needRope)
-        {
-            MoneyCT.GetComponent<customer>().needRope = false;
-            MoneyCT.GetComponent<MoneyCT>().DidRope = true;
             MoneyCT.GetComponent<MoneyCT>().usedRope++;
+
+
 
         }
 

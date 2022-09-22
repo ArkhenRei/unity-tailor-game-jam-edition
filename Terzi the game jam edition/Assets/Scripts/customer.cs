@@ -42,7 +42,7 @@ public class customer: MonoBehaviour
     public void chooseClothes()
     {
         cType = false;
-        RandClot = Random.Range(0, 7);
+        RandClot = Random.Range(0, 6);
         if (RandClot == 0)
         {
             RandColo = Random.Range(0, 4);
@@ -78,25 +78,25 @@ public class customer: MonoBehaviour
             {
                 pants[0].SetActive(true);
                 needFabric = true;
-                needRope = true;
+               
             }
             else if (RandColo == 1)
             {
                 pants[2].SetActive(true);
                 needFabric = true;
-                needRope = true;
+            
             }
             else if (RandColo == 2)
             {
                 pants[4].SetActive(true);
                 needFabric = true;
-                needRope = true;
+                
             }
             else if (RandColo == 3)
             {
                 pants[6].SetActive(true);
                 needFabric = true;
-                needRope = true;
+              
             }
         }
         else if (RandClot == 2)
@@ -106,25 +106,25 @@ public class customer: MonoBehaviour
             {
                 sweaters[0].SetActive(true);
                 needFabric = true;
-                needRope = true;
+        
             }
             else if (RandColo == 1)
             {
                 sweaters[2].SetActive(true);
                 needFabric = true;
-                needRope = true;
+
             }
             else if (RandColo == 2)
             {
                 sweaters[4].SetActive(true);
                 needFabric = true;
-                needRope = true;
+
             }
             else if (RandColo == 3)
             {
                 sweaters[6].SetActive(true);
                 needFabric = true;
-                needRope = true;
+
             }
         }
         else if (RandClot == 3)
@@ -134,25 +134,22 @@ public class customer: MonoBehaviour
             {
                 tshirts[0].SetActive(true);
                 needFabric = true;
-                needRope = true;
             }
             else if (RandColo == 1)
             {
                 tshirts[2].SetActive(true);
                 needFabric = true;
-                needRope = true;
+
             }
             else if (RandColo == 2)
             {
                 tshirts[4].SetActive(true);
                 needFabric = true;
-                needRope = true;
             }
             else if (RandColo == 3)
             {
                 tshirts[6].SetActive(true);
                 needFabric = true;
-                needRope = true;
             }
         }
         else if (RandClot == 4)
@@ -162,32 +159,27 @@ public class customer: MonoBehaviour
             {
                 hoodies[0].SetActive(true);
                 needFabric = true;
-                needRope = true;
             }
             else if (RandColo == 1)
             {
                 hoodies[2].SetActive(true);
                 needFabric = true;
-                needRope = true;
             }
             else if (RandColo == 2)
             {
                 hoodies[4].SetActive(true);
                 needFabric = true;
-                needRope = true;
             }
             else if (RandColo == 3)
             {
                 hoodies[6].SetActive(true);
                 needFabric = true;
-                needRope = true;
             }
         }
         else if (RandClot == 5)
         {
             costumes[0].SetActive(true);
             needFabric = true;
-            needRope = true;
 
         }
     }
