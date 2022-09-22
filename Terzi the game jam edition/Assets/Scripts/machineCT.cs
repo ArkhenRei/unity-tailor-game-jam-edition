@@ -19,6 +19,19 @@ public class machineCT : MonoBehaviour
     public GameObject b;
     public GameObject c;
     public int keepR;
+    public GameObject startt;
+    public GameObject exit;
+    public GameObject bstartt;
+    public GameObject bexit;
+    public GameObject cstartt;
+    public GameObject cexit;
+    public GameObject startBut;
+    public GameObject exitBut;
+    public GameObject bstartBut;
+    public GameObject bexitBut;
+    public GameObject cstartBut;
+    public GameObject cexitBut;
+
     // Start is called before the first frame update
     public void Awake()
     {
@@ -62,39 +75,33 @@ public class machineCT : MonoBehaviour
         if (keepR ==0)
         {
             a.SetActive(true);
+            startt.SetActive(true);
+            exit.SetActive(false);
+            startBut.SetActive(true);
+            exitBut.SetActive(false);
+
         }
         else if (keepR ==1)
         {
             b.SetActive(true);
+            bstartt.SetActive(true);
+            bexit.SetActive(false);
+            bstartBut.SetActive(true);
+            bexitBut.SetActive(false);
         }
-        if (keepR == 2)
+        else if (keepR == 2)
         {
             c.SetActive(true);
+            cstartt.SetActive(true);
+            cexit.SetActive(false);
+            cstartBut.SetActive(true);
+            cexitBut.SetActive(false);
         }
         if (MoneyCT.GetComponent<customer>().RandClot == 0)
          {
              MoneyCT.GetComponent<customer>().cType = true;
          }
-         if (!MoneyCT.GetComponent<customer>().cType && iron.GetComponent<IronCt>().canIron)
-         {
-             MoneyCT.GetComponent<MoneyCT>().score = 0;
-             isCompleted = true;
-            a.SetActive(false);
-            b.SetActive(false);
-            c.SetActive(false);
-
-         }
-         else if (!MoneyCT.GetComponent<customer>().cType || iron.GetComponent<IronCt>().canIron)
-         {
-
-            isCompleted = true;
-
-        }
-         else if (MoneyCT.GetComponent<customer>().cType && iron.GetComponent<IronCt>().canIron == false)
-         {
-
-            isCompleted = true;
-        }
+       
     }
 
     public void startmachineSweaters()
@@ -103,42 +110,33 @@ public class machineCT : MonoBehaviour
         if (keepR == 0)
         {
             a.SetActive(true);
+            startt.SetActive(true);
+            exit.SetActive(false);
+            startBut.SetActive(true);
+            exitBut.SetActive(false);
+
         }
         else if (keepR == 1)
         {
             b.SetActive(true);
+            bstartt.SetActive(true);
+            bexit.SetActive(false);
+            bstartBut.SetActive(true);
+            bexitBut.SetActive(false);
         }
-        if (keepR == 2)
+        else if (keepR == 2)
         {
             c.SetActive(true);
+            cstartt.SetActive(true);
+            cexit.SetActive(false);
+            cstartBut.SetActive(true);
+            cexitBut.SetActive(false);
         }
         if (MoneyCT.GetComponent<customer>().RandClot == 2)
         {
             MoneyCT.GetComponent<customer>().cType = true;
         }
-        if (!MoneyCT.GetComponent<customer>().cType && iron.GetComponent<IronCt>().canIron)
-        {
-            MoneyCT.GetComponent<MoneyCT>().score = 0;
-            isCompleted = true;
-            a.SetActive(false);
-            b.SetActive(false);
-            c.SetActive(false);
-
-        }
-        else if (!MoneyCT.GetComponent<customer>().cType || iron.GetComponent<IronCt>().canIron)
-        {
-
-            MoneyCT.GetComponent<MoneyCT>().isScore = false;
-            isCompleted = true;
-
-        }
-        else if (MoneyCT.GetComponent<customer>().cType && iron.GetComponent<IronCt>().canIron == false)
-        {
-
-            MoneyCT.GetComponent<MoneyCT>().isScore = true;
-            isCompleted = true;
-        }
-
+    
     }
     public void startmachinePants()
     {
@@ -146,41 +144,33 @@ public class machineCT : MonoBehaviour
         if (keepR == 0)
         {
             a.SetActive(true);
+            startt.SetActive(true);
+            exit.SetActive(false);
+            startBut.SetActive(true);
+            exitBut.SetActive(false);
+
         }
         else if (keepR == 1)
         {
             b.SetActive(true);
+            bstartt.SetActive(true);
+            bexit.SetActive(false);
+            bstartBut.SetActive(true);
+            bexitBut.SetActive(false);
         }
-        if (keepR == 2)
+        else if (keepR == 2)
         {
             c.SetActive(true);
+            cstartt.SetActive(true);
+            cexit.SetActive(false);
+            cstartBut.SetActive(true);
+            cexitBut.SetActive(false);
         }
         if (MoneyCT.GetComponent<customer>().RandClot == 1)
         {
             MoneyCT.GetComponent<customer>().cType = true;
         }
-        if (!MoneyCT.GetComponent<customer>().cType && iron.GetComponent<IronCt>().canIron)
-        {
-            MoneyCT.GetComponent<MoneyCT>().score = 0;
-            isCompleted = true;
-            a.SetActive(false);
-            b.SetActive(false);
-            c.SetActive(false);
-
-        }
-        else if (!MoneyCT.GetComponent<customer>().cType || iron.GetComponent<IronCt>().canIron)
-        {
-
-            MoneyCT.GetComponent<MoneyCT>().isScore = false;
-            isCompleted = true;
-
-        }
-        else if (MoneyCT.GetComponent<customer>().cType && iron.GetComponent<IronCt>().canIron == false)
-        {
-
-            MoneyCT.GetComponent<MoneyCT>().isScore = true;
-            isCompleted = true;
-        }
+     
     }
     public void startmachineCostumes()
     {
@@ -188,41 +178,33 @@ public class machineCT : MonoBehaviour
         if (keepR == 0)
         {
             a.SetActive(true);
+            startt.SetActive(true);
+            exit.SetActive(false);
+            startBut.SetActive(true);
+            exitBut.SetActive(false);
+
         }
         else if (keepR == 1)
         {
             b.SetActive(true);
+            bstartt.SetActive(true);
+            bexit.SetActive(false);
+            bstartBut.SetActive(true);
+            bexitBut.SetActive(false);
         }
-        if (keepR == 2)
+        else if (keepR == 2)
         {
             c.SetActive(true);
+            cstartt.SetActive(true);
+            cexit.SetActive(false);
+            cstartBut.SetActive(true);
+            cexitBut.SetActive(false);
         }
         if (MoneyCT.GetComponent<customer>().RandClot == 5)
         {
             MoneyCT.GetComponent<customer>().cType = true;
         }
-        if (!MoneyCT.GetComponent<customer>().cType && iron.GetComponent<IronCt>().canIron)
-        {
-            MoneyCT.GetComponent<MoneyCT>().score = 0;
-            isCompleted = true;
-            a.SetActive(false);
-            b.SetActive(false);
-            c.SetActive(false);
-
-        }
-        else if (!MoneyCT.GetComponent<customer>().cType || iron.GetComponent<IronCt>().canIron)
-        {
-
-            MoneyCT.GetComponent<MoneyCT>().isScore = false;
-            isCompleted = true;
-
-        }
-        else if (MoneyCT.GetComponent<customer>().cType && iron.GetComponent<IronCt>().canIron == false)
-        {
-
-            MoneyCT.GetComponent<MoneyCT>().isScore = true;
-            isCompleted = true;
-        }
+      
     }
     public void startmachineTshirts()
     {
@@ -230,41 +212,33 @@ public class machineCT : MonoBehaviour
         if (keepR == 0)
         {
             a.SetActive(true);
+            startt.SetActive(true);
+            exit.SetActive(false);
+            startBut.SetActive(true);
+            exitBut.SetActive(false);
+
         }
         else if (keepR == 1)
         {
             b.SetActive(true);
+            bstartt.SetActive(true);
+            bexit.SetActive(false);
+            bstartBut.SetActive(true);
+            bexitBut.SetActive(false);
         }
-        if (keepR == 2)
+        else if (keepR == 2)
         {
             c.SetActive(true);
+            cstartt.SetActive(true);
+            cexit.SetActive(false);
+            cstartBut.SetActive(true);
+            cexitBut.SetActive(false);
         }
         if (MoneyCT.GetComponent<customer>().RandClot == 3)
         {
             MoneyCT.GetComponent<customer>().cType = true;
         }
-        if (!MoneyCT.GetComponent<customer>().cType && iron.GetComponent<IronCt>().canIron)
-        {
-            MoneyCT.GetComponent<MoneyCT>().score = 0;
-            isCompleted = true;
-            a.SetActive(false);
-            b.SetActive(false);
-            c.SetActive(false);
-
-        }
-        else if (!MoneyCT.GetComponent<customer>().cType || iron.GetComponent<IronCt>().canIron)
-        {
-
-            MoneyCT.GetComponent<MoneyCT>().isScore = false;
-            isCompleted = true;
-
-        }
-        else if (MoneyCT.GetComponent<customer>().cType && iron.GetComponent<IronCt>().canIron == false)
-        {
-
-            MoneyCT.GetComponent<MoneyCT>().isScore = true;
-            isCompleted = true;
-        }
+       
     }
     public void startmachineHoodies()
     {
@@ -272,40 +246,32 @@ public class machineCT : MonoBehaviour
         if (keepR == 0)
         {
             a.SetActive(true);
+            startt.SetActive(true);
+            exit.SetActive(false);
+            startBut.SetActive(true);
+            exitBut.SetActive(false);
+
         }
         else if (keepR == 1)
         {
             b.SetActive(true);
+            bstartt.SetActive(true);
+            bexit.SetActive(false);
+            bstartBut.SetActive(true);
+            bexitBut.SetActive(false);
         }
-        if (keepR == 2)
+        else if (keepR == 2)
         {
             c.SetActive(true);
+            cstartt.SetActive(true);
+            cexit.SetActive(false);
+            cstartBut.SetActive(true);
+            cexitBut.SetActive(false);
         }
         if (MoneyCT.GetComponent<customer>().RandClot == 4)
         {
             MoneyCT.GetComponent<customer>().cType = true;
         }
-        if (!MoneyCT.GetComponent<customer>().cType && iron.GetComponent<IronCt>().canIron)
-        {
-            MoneyCT.GetComponent<MoneyCT>().score = 0;
-            isCompleted = true;
-            a.SetActive(false);
-            b.SetActive(false);
-            c.SetActive(false);
 
-        }
-        else if (!MoneyCT.GetComponent<customer>().cType || iron.GetComponent<IronCt>().canIron)
-        {
-
-            MoneyCT.GetComponent<MoneyCT>().isScore = false;
-            isCompleted = true;
-
-        }
-        else if (MoneyCT.GetComponent<customer>().cType && iron.GetComponent<IronCt>().canIron == false)
-        {
-
-            MoneyCT.GetComponent<MoneyCT>().isScore = true;
-            isCompleted = true;
-        }
     }
 }

@@ -20,6 +20,9 @@ public class GameCT : MonoBehaviour
     public int sayac = 0;
     public GameObject machine;
     public GameObject iron;
+    public GameObject end;
+    public TextMeshProUGUI LastDay;
+    public GameObject names;
 
     public bool Didİron =false;
     public bool DidMachine =false;
@@ -47,11 +50,14 @@ public class GameCT : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             panel.SetActive(true);
+            names.SetActive(false);
         }
     }
     public void resumeA()
     {
+        names.SetActive(true);
         panel.SetActive(false);
+
     }
     public void exitA()
     {
@@ -62,24 +68,46 @@ public class GameCT : MonoBehaviour
    
     public void nextDayy()
     {
-        day++;
-        GetComponent<MoneyCT>().cust = 1;
-        NextDay.SetActive(false);
-        GetComponent<MoneyCT>().earned = 0;
-        GetComponent<MoneyCT>().earnToday = 0;
-        GetComponent<MoneyCT>().expense = 0;
-        GetComponent<MoneyCT>().usedRope = 0;
-        GetComponent<MoneyCT>().usedFabric = 0;
+       
+       
+            names.SetActive(true);
+            day++;
+            GetComponent<MoneyCT>().cust = 1;
+            NextDay.SetActive(false);
+            GetComponent<MoneyCT>().earned = 0;
+            GetComponent<MoneyCT>().earnToday = 0;
+            GetComponent<MoneyCT>().expense = 0;
+            GetComponent<MoneyCT>().usedRope = 0;
+            GetComponent<MoneyCT>().usedFabric = 0;
+        
+     
         
     }
     public void endDay()
     {
-        NextDay.SetActive(true);
-        GetComponent<MoneyCT>().expense = GetComponent<MoneyCT>().usedFabric * 15 + GetComponent<MoneyCT>().usedRope * 10 + 25;
-        GetComponent<MoneyCT>().earnToday = GetComponent<MoneyCT>().expense + GetComponent<MoneyCT>().earned;
-        GetComponent<MoneyCT>().totalMoney = GetComponent<MoneyCT>().totalMoney + GetComponent<MoneyCT>().earned;
-        TotalMoney.text = "Total Money=" + GetComponent<MoneyCT>().totalMoney.ToString();
-        Expense.text = "Expense =" + GetComponent<MoneyCT>().expense.ToString();
-        EarnedMoney.text = "Earned Today=" + GetComponent<MoneyCT>().earnToday.ToString();
+        if (day > 3)
+        {
+            end.SetActive(true);
+            LastDay.text = "You saved" + " " + GetComponent<MoneyCT>().totalMoney.ToString() + " " + "Dollars";
+            names.SetActive(false);
+        }
+        else
+        {
+            names.SetActive(false);
+            NextDay.SetActive(true);
+            GetComponent<MoneyCT>().expense = GetComponent<MoneyCT>().usedFabric * 15 + GetComponent<MoneyCT>().usedRope * 10 + 25;
+            GetComponent<MoneyCT>().earnToday = GetComponent<MoneyCT>().expense + GetComponent<MoneyCT>().earned;
+            GetComponent<MoneyCT>().totalMoney = GetComponent<MoneyCT>().totalMoney + GetComponent<MoneyCT>().earned;
+            TotalMoney.text = "Total Money=" + GetComponent<MoneyCT>().totalMoney.ToString();
+            Expense.text = "Expense =" + GetComponent<MoneyCT>().expense.ToString();
+            EarnedMoney.text = "Earned Today=" + GetComponent<MoneyCT>().earnToday.ToString();
+        }
+ 
+ 
+         
+      
+       
     }
+
+
 }

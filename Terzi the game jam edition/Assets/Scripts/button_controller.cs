@@ -13,6 +13,7 @@ public class button_controller : MonoBehaviour
     public GameObject needle;
     public GameObject moneyCT;
     public GameObject machine;
+    public GameObject fabric;
     
 
     // Start is called before the first frame update
@@ -30,6 +31,10 @@ public class button_controller : MonoBehaviour
     {
         StartGame.SetActive(false);
         Time.timeScale = 1f;
+        fabric.GetComponent<fabric_controller>().speedHor = 25f;
+        fabric.GetComponent<fabric_controller>().speedVer = 0.85f;
+
+
     }
     public void endGame()
     {
@@ -59,6 +64,33 @@ public class button_controller : MonoBehaviour
         {
             moneyCT.GetComponent<MoneyCT>().earned += -5;
         }
+        foreach (var item in moneyCT.GetComponent<customer>().coats)
+        {
+            item.SetActive(false);
+        }
+        foreach (var item in moneyCT.GetComponent<customer>().pants)
+        {
+            item.SetActive(false);
+        }
+        foreach (var item in moneyCT.GetComponent<customer>().costumes)
+        {
+            item.SetActive(false);
+        }
+        foreach (var item in moneyCT.GetComponent<customer>().tshirts)
+        {
+            item.SetActive(false);
+        }
+        foreach (var item in moneyCT.GetComponent<customer>().sweaters)
+        {
+            item.SetActive(false);
+        }
+        foreach (var item in moneyCT.GetComponent<customer>().hoodies)
+        {
+            item.SetActive(false);
+        }
+
+        machine.GetComponent<machineCT>().isCompleted = true;
+        fabric.GetComponent<fabric_controller>().sifirla();
         machine.GetComponent<machineCT>().button.SetActive(false);
         machine.GetComponent<machineCT>().canPlay = false;
         moneyCT.GetComponent<MoneyCT>().DidFabric = false;

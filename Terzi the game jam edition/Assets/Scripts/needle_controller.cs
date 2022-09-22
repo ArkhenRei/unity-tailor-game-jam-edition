@@ -5,7 +5,7 @@ using UnityEngine;
 public class needle_controller : MonoBehaviour
 {
     public Animator myAnimator;
-    [SerializeField] float score = 0, badQua = 958, aveQua = 1916;
+    public float score = 0, badQua = 958, aveQua = 1916;
     GameObject myGameController;
     public bool incScore, decScore, rightNeedle, didIron;
     public string qua;
