@@ -63,7 +63,7 @@ public class GameCT : MonoBehaviour
     public void nextDayy()
     {
         day++;
-        GetComponent<MoneyCT>().cust = 0;
+        GetComponent<MoneyCT>().cust = 1;
         NextDay.SetActive(false);
         GetComponent<MoneyCT>().earned = 0;
         GetComponent<MoneyCT>().earnToday = 0;

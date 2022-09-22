@@ -67,7 +67,6 @@ public class MoneyCT : MonoBehaviour
             sort[i] = i;
 
         }
-        characterRandom();
     }
 
     // Update is called once per frame
@@ -80,10 +79,6 @@ public class MoneyCT : MonoBehaviour
             {
                 item.SetActive(false);
             }
-        }
-        if (cust ==0 && !didMachine)
-        {
-            cust = 1;
         }
         if (cust== 1 && !didMachine)
         {
@@ -100,12 +95,6 @@ public class MoneyCT : MonoBehaviour
         
     }
 
-    public void characterRandom()
-    {
-       
-       
-
-    }
 
     public void NextCustomer()
     {
@@ -113,7 +102,6 @@ public class MoneyCT : MonoBehaviour
         if (didMachine)
         {
             DidFabric = false;
-            DidRope = false;
             cust++;
             iron.GetComponent<IronCt>().canIron = true;
             machine.GetComponent<machineCT>().canPlay = false;

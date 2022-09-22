@@ -40,8 +40,7 @@ public class needle_controller : MonoBehaviour
       
 
         
-        if (didIron && rightNeedle)
-        {
+
             if (score <= badQua)
             {
                 qua = "bad";
@@ -54,7 +53,7 @@ public class needle_controller : MonoBehaviour
             {
                 qua = "good";
             }
-        }
+   
     }
 
     private void OnTriggerExit2D(Collider2D collision)
