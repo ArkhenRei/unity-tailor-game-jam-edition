@@ -8,28 +8,32 @@ public class IronCt : MonoBehaviour
     public Vector3 defaultPosition;
     public Vector3 rotationIron;
     public ParticleSystem steam;
-    public float neededTime = 1000000f;
-    public float keepTime =0f;
     public Vector2 velocityIron;
-    public GameObject tamirli;
-    public GameObject hasarli;
     public GameObject gameCT;
     public int cust;
     public int samecust =1;
     public bool canIron= false;
+    public Sprite highlighted;
+    public Sprite normal;
 
     private void Awake()
     {
+        canIron = true;
         velocityIron = new Vector2(0, 0);
         rotationIron = new Vector3(15f, 0f, 45f);
         defaultPosition = transform.position;
     }
     void Update()
     {
-        cust = gameCT.GetComponent<GameCT>().currenCust;
-        if (cust > 0 && cust == samecust && gameCT.GetComponent<GameCT>().Didİron)
+        if (canIron)
         {
-            canIron = true;
+            GetComponent<SpriteRenderer>().sprite = normal;
+        }
+        else
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+            _dragging = false;
+            GetComponent<SpriteRenderer>().sprite = highlighted;
         }
        
         if (!_dragging)
@@ -67,12 +71,9 @@ public class IronCt : MonoBehaviour
             if (canIron == true)
             {
                 Invoke("playSteam", 1f);
-                hasarli = collision.gameObject;
+               
             }
-           
-            
-            
-
+          
         }
     }
 
@@ -87,11 +88,7 @@ public class IronCt : MonoBehaviour
     {
 
         steam.Play();
-        hasarli.SetActive(false);
-        tamirli.gameObject.SetActive(true);
         canIron=false;
-        gameCT.GetComponent<GameCT>().Didİron = true;
-        samecust++;
         if (samecust>5)
         {
             samecust = 1;

@@ -10,6 +10,7 @@ public class GameCT : MonoBehaviour
     public int currenCust = 0;
     public TextMeshProUGUI dayKeep;
     public GameObject NextDay;
+    public GameObject money;
     public TextMeshProUGUI SpeechBubble;
     public GameObject panel;
     public string[] words = new string[10];
@@ -31,7 +32,7 @@ public class GameCT : MonoBehaviour
 
         dayKeep.text = "Day" + " " + day.ToString();
 
-        if (currenCust > maxCust)
+        if (money.GetComponent<MoneyCT>().cust >5)
         {
             if (NextDay.activeSelf == false)
             {
@@ -55,17 +56,11 @@ public class GameCT : MonoBehaviour
     }
 
 
-    public void nextCustomer()
-    {
-        DidMachine = false;
-        Didİron = false;
-        currenCust++;
-        
-    }
+   
     public void nextDayy()
     {
         day++;
-        currenCust = 0;
+        money.GetComponent<MoneyCT>().cust = 0;
         NextDay.SetActive(false);
     }
 }
