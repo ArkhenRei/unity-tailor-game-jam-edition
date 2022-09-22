@@ -15,6 +15,7 @@ public class IronCt : MonoBehaviour
     public bool canIron= false;
     public Sprite highlighted;
     public Sprite normal;
+    public AudioSource steamS;
 
     private void Awake()
     {
@@ -86,7 +87,7 @@ public class IronCt : MonoBehaviour
     }
     public void playSteam()
     {
-
+        steamS.Play();
         steam.Play();
         canIron=false;
         if (samecust>5)

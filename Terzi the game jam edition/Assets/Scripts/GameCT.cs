@@ -24,11 +24,13 @@ public class GameCT : MonoBehaviour
     public TextMeshProUGUI LastDay;
     public GameObject names;
 
+    public AudioSource music;
+
     public bool Didİron =false;
     public bool DidMachine =false;
     public void Start()
     {
-
+        music.Play();
         
 
     }

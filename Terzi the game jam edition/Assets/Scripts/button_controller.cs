@@ -14,6 +14,7 @@ public class button_controller : MonoBehaviour
     public GameObject moneyCT;
     public GameObject machine;
     public GameObject fabric;
+    public AudioSource sew;
     
 
     // Start is called before the first frame update
@@ -29,6 +30,7 @@ public class button_controller : MonoBehaviour
     }
     public void startGame()
     {
+        sew.Play();
         StartGame.SetActive(false);
         Time.timeScale = 1f;
         fabric.GetComponent<fabric_controller>().speedHor = 25f;
@@ -88,7 +90,7 @@ public class button_controller : MonoBehaviour
         {
             item.SetActive(false);
         }
-
+        sew.Pause();
         machine.GetComponent<machineCT>().isCompleted = true;
         fabric.GetComponent<fabric_controller>().sifirla();
         machine.GetComponent<machineCT>().button.SetActive(false);
