@@ -15,6 +15,10 @@ public class machineCT : MonoBehaviour
     public bool isCompleted = false;
     public bool canPlay;
     [SerializeField] GameObject[] myMinigames;
+    public GameObject a;
+    public GameObject b;
+    public GameObject c;
+    public int keepR;
     // Start is called before the first frame update
     public void Awake()
     {
@@ -23,47 +27,34 @@ public class machineCT : MonoBehaviour
 
     public void Update()
     {
+        if (MoneyCT.GetComponent<MoneyCT>().DidFabric && MoneyCT.GetComponent<MoneyCT>().DidRope)
+        {
+            gameObject.GetComponent<SpriteRenderer>().sprite = highlight;
+            canPlay = true;
+            button.SetActive(true);
+        }
         if (gameObject.GetComponent<SpriteRenderer>().sprite == highlight && canPlay== false)
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = normal;
         }
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            if (!MoneyCT.GetComponent<MoneyCT>().isScore)
-            {
-                if (MoneyCT.GetComponent<MoneyCT>().score ==2)
-                {
-                    MoneyCT.GetComponent<MoneyCT>().score = 1;
-                }
-                else if (MoneyCT.GetComponent<MoneyCT>().score ==1 || MoneyCT.GetComponent<MoneyCT>().score ==0)
-                {
-                    MoneyCT.GetComponent<MoneyCT>().score = 0;
-                }
-            }
-            start.SetActive(false);
-            button.SetActive(false);
-            isCompleted = true;
-        }
+       
     }
    
     public void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "fabric" && MoneyCT.GetComponent<customer>().needFabric)
         {
+            MoneyCT.GetComponent<customer>().needFabric = false;
             MoneyCT.GetComponent<MoneyCT>().DidFabric = true;
             MoneyCT.GetComponent<MoneyCT>().usedFabric++;
-            gameObject.GetComponent<SpriteRenderer>().sprite = highlight;
-            canPlay = true;
-            button.SetActive(true);
+
             
         }
-        if (collision.gameObject.tag == "rope" && MoneyCT.GetComponent<customer>().needFabric && MoneyCT.GetComponent<customer>().needRope)
+        if (collision.gameObject.tag == "rope" && MoneyCT.GetComponent<customer>().needRope)
         {
+            MoneyCT.GetComponent<customer>().needRope = false;
             MoneyCT.GetComponent<MoneyCT>().DidRope = true;
             MoneyCT.GetComponent<MoneyCT>().usedRope++;
-            gameObject.GetComponent<SpriteRenderer>().sprite = highlight;
-            canPlay = true;
-            button.SetActive(true);
 
         }
 
@@ -72,84 +63,254 @@ public class machineCT : MonoBehaviour
 
     public void startmachineCoats()
     {
-        if (MoneyCT.GetComponent<customer>().RandClot ==0)
+        keepR = Random.Range(0, 3);
+        if (keepR ==0)
         {
-            MoneyCT.GetComponent<customer>().cType = true;
+            a.SetActive(true);
         }
-       
-        start.SetActive(true);
-        button.SetActive(false);
+        else if (keepR ==1)
+        {
+            b.SetActive(true);
+        }
+        if (keepR == 2)
+        {
+            c.SetActive(true);
+        }
+        if (MoneyCT.GetComponent<customer>().RandClot == 0)
+         {
+             MoneyCT.GetComponent<customer>().cType = true;
+         }
+         if (!MoneyCT.GetComponent<customer>().cType && iron.GetComponent<IronCt>().canIron)
+         {
+             MoneyCT.GetComponent<MoneyCT>().score = 0;
+             isCompleted = true;
+            a.SetActive(false);
+            b.SetActive(false);
+            c.SetActive(false);
+
+         }
+         else if (!MoneyCT.GetComponent<customer>().cType || iron.GetComponent<IronCt>().canIron)
+         {
+
+            isCompleted = true;
+
+        }
+         else if (MoneyCT.GetComponent<customer>().cType && iron.GetComponent<IronCt>().canIron == false)
+         {
+
+            isCompleted = true;
+        }
     }
 
     public void startmachineSweaters()
     {
-        if (MoneyCT.GetComponent<customer>().RandClot == 3)
+        keepR = Random.Range(0, 3);
+        if (keepR == 0)
         {
-            MoneyCT.GetComponent<customer>().cType = true;
-            createMinigame();
+            a.SetActive(true);
         }
-        if (!MoneyCT.GetComponent<customer>().cType && iron.GetComponent<IronCt>().canIron)
+        else if (keepR == 1)
         {
-            MoneyCT.GetComponent<MoneyCT>().score =0;
-            isCompleted = true;
-           
+            b.SetActive(true);
         }
-        else if (!MoneyCT.GetComponent<customer>().cType || iron.GetComponent<IronCt>().canIron)
+        if (keepR == 2)
         {
-            start.SetActive(true);
-            button.SetActive(false);
-            MoneyCT.GetComponent<MoneyCT>().isScore = false;
-            createMinigame();
+            c.SetActive(true);
         }
-        else if (MoneyCT.GetComponent<customer>().cType && iron.GetComponent<IronCt>().canIron == false)
-        {
-            start.SetActive(true);
-            button.SetActive(false);
-            MoneyCT.GetComponent<MoneyCT>().isScore = true;
-            createMinigame();
-        }
-      
-    }
-    public void startmachinePants()
-    {
         if (MoneyCT.GetComponent<customer>().RandClot == 2)
         {
             MoneyCT.GetComponent<customer>().cType = true;
         }
-        start.SetActive(true);
-        button.SetActive(false);
+        if (!MoneyCT.GetComponent<customer>().cType && iron.GetComponent<IronCt>().canIron)
+        {
+            MoneyCT.GetComponent<MoneyCT>().score = 0;
+            isCompleted = true;
+            a.SetActive(false);
+            b.SetActive(false);
+            c.SetActive(false);
+
+        }
+        else if (!MoneyCT.GetComponent<customer>().cType || iron.GetComponent<IronCt>().canIron)
+        {
+
+            MoneyCT.GetComponent<MoneyCT>().isScore = false;
+            isCompleted = true;
+
+        }
+        else if (MoneyCT.GetComponent<customer>().cType && iron.GetComponent<IronCt>().canIron == false)
+        {
+
+            MoneyCT.GetComponent<MoneyCT>().isScore = true;
+            isCompleted = true;
+        }
+
     }
-    public void startmachineCostumes()
+    public void startmachinePants()
     {
+        keepR = Random.Range(0, 3);
+        if (keepR == 0)
+        {
+            a.SetActive(true);
+        }
+        else if (keepR == 1)
+        {
+            b.SetActive(true);
+        }
+        if (keepR == 2)
+        {
+            c.SetActive(true);
+        }
         if (MoneyCT.GetComponent<customer>().RandClot == 1)
         {
             MoneyCT.GetComponent<customer>().cType = true;
         }
-        start.SetActive(true);
-        button.SetActive(false);
-    }
-    public void startmachineTshirts()
-    {
-        if (MoneyCT.GetComponent<customer>().RandClot == 4)
+        if (!MoneyCT.GetComponent<customer>().cType && iron.GetComponent<IronCt>().canIron)
         {
-            MoneyCT.GetComponent<customer>().cType = true;
+            MoneyCT.GetComponent<MoneyCT>().score = 0;
+            isCompleted = true;
+            a.SetActive(false);
+            b.SetActive(false);
+            c.SetActive(false);
+
         }
-        start.SetActive(true);
-        button.SetActive(false);
+        else if (!MoneyCT.GetComponent<customer>().cType || iron.GetComponent<IronCt>().canIron)
+        {
+
+            MoneyCT.GetComponent<MoneyCT>().isScore = false;
+            isCompleted = true;
+
+        }
+        else if (MoneyCT.GetComponent<customer>().cType && iron.GetComponent<IronCt>().canIron == false)
+        {
+
+            MoneyCT.GetComponent<MoneyCT>().isScore = true;
+            isCompleted = true;
+        }
     }
-    public void startmachineHoodies()
+    public void startmachineCostumes()
     {
+        keepR = Random.Range(0, 3);
+        if (keepR == 0)
+        {
+            a.SetActive(true);
+        }
+        else if (keepR == 1)
+        {
+            b.SetActive(true);
+        }
+        if (keepR == 2)
+        {
+            c.SetActive(true);
+        }
         if (MoneyCT.GetComponent<customer>().RandClot == 5)
         {
             MoneyCT.GetComponent<customer>().cType = true;
         }
-        start.SetActive(true);
-        button.SetActive(false);
-    }
-    public void createMinigame()
-    {
-        int randomIndex = Random.Range(0, myMinigames.Length);
+        if (!MoneyCT.GetComponent<customer>().cType && iron.GetComponent<IronCt>().canIron)
+        {
+            MoneyCT.GetComponent<MoneyCT>().score = 0;
+            isCompleted = true;
+            a.SetActive(false);
+            b.SetActive(false);
+            c.SetActive(false);
 
-        GameObject instantiatedObject = Instantiate(myMinigames[randomIndex]);
+        }
+        else if (!MoneyCT.GetComponent<customer>().cType || iron.GetComponent<IronCt>().canIron)
+        {
+
+            MoneyCT.GetComponent<MoneyCT>().isScore = false;
+            isCompleted = true;
+
+        }
+        else if (MoneyCT.GetComponent<customer>().cType && iron.GetComponent<IronCt>().canIron == false)
+        {
+
+            MoneyCT.GetComponent<MoneyCT>().isScore = true;
+            isCompleted = true;
+        }
+    }
+    public void startmachineTshirts()
+    {
+        keepR = Random.Range(0, 3);
+        if (keepR == 0)
+        {
+            a.SetActive(true);
+        }
+        else if (keepR == 1)
+        {
+            b.SetActive(true);
+        }
+        if (keepR == 2)
+        {
+            c.SetActive(true);
+        }
+        if (MoneyCT.GetComponent<customer>().RandClot == 3)
+        {
+            MoneyCT.GetComponent<customer>().cType = true;
+        }
+        if (!MoneyCT.GetComponent<customer>().cType && iron.GetComponent<IronCt>().canIron)
+        {
+            MoneyCT.GetComponent<MoneyCT>().score = 0;
+            isCompleted = true;
+            a.SetActive(false);
+            b.SetActive(false);
+            c.SetActive(false);
+
+        }
+        else if (!MoneyCT.GetComponent<customer>().cType || iron.GetComponent<IronCt>().canIron)
+        {
+
+            MoneyCT.GetComponent<MoneyCT>().isScore = false;
+            isCompleted = true;
+
+        }
+        else if (MoneyCT.GetComponent<customer>().cType && iron.GetComponent<IronCt>().canIron == false)
+        {
+
+            MoneyCT.GetComponent<MoneyCT>().isScore = true;
+            isCompleted = true;
+        }
+    }
+    public void startmachineHoodies()
+    {
+        keepR = Random.Range(0, 3);
+        if (keepR == 0)
+        {
+            a.SetActive(true);
+        }
+        else if (keepR == 1)
+        {
+            b.SetActive(true);
+        }
+        if (keepR == 2)
+        {
+            c.SetActive(true);
+        }
+        if (MoneyCT.GetComponent<customer>().RandClot == 4)
+        {
+            MoneyCT.GetComponent<customer>().cType = true;
+        }
+        if (!MoneyCT.GetComponent<customer>().cType && iron.GetComponent<IronCt>().canIron)
+        {
+            MoneyCT.GetComponent<MoneyCT>().score = 0;
+            isCompleted = true;
+            a.SetActive(false);
+            b.SetActive(false);
+            c.SetActive(false);
+
+        }
+        else if (!MoneyCT.GetComponent<customer>().cType || iron.GetComponent<IronCt>().canIron)
+        {
+
+            MoneyCT.GetComponent<MoneyCT>().isScore = false;
+            isCompleted = true;
+
+        }
+        else if (MoneyCT.GetComponent<customer>().cType && iron.GetComponent<IronCt>().canIron == false)
+        {
+
+            MoneyCT.GetComponent<MoneyCT>().isScore = true;
+            isCompleted = true;
+        }
     }
 }

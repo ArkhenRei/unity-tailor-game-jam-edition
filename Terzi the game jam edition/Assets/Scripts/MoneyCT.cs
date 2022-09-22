@@ -73,8 +73,6 @@ public class MoneyCT : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        usedFabricG.text = "Kullanilan Kumas: " + usedFabric.ToString();
-        usedRopeG.text ="Kullanilan ip: " + usedRope.ToString();
         didMachine = machine.GetComponent<machineCT>().isCompleted;
         if (didMachine)
         {
