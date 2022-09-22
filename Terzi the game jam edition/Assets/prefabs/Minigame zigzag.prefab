@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5575281116976305627}
   - component: {fileID: 5575281116976305625}
   - component: {fileID: 5575281116976305626}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Score good text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 5575281116983738445}
   - component: {fileID: 5575281116983738435}
   - component: {fileID: 5575281116983738444}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -281,7 +281,7 @@ GameObject:
   - component: {fileID: 5575281117026240344}
   - component: {fileID: 5575281117026240345}
   - component: {fileID: 5575281117026240346}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Score Average
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -358,7 +358,7 @@ GameObject:
   - component: {fileID: 5575281117088770432}
   - component: {fileID: 5575281117088770438}
   - component: {fileID: 5575281117088770439}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -494,7 +494,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5575281117263313460}
   - component: {fileID: 5575281117263313419}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: needle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -555,8 +555,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1927678641
+  m_SortingLayer: 1
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 74faee9380673244e99b5ebff2e2da39, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -579,7 +579,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5575281117461939994}
   - component: {fileID: 5575281117461939993}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -603,7 +603,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -434.16, y: -224.82}
+  m_AnchoredPosition: {x: -551, y: -265}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &5575281117461939993
@@ -644,8 +644,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1927678641
+  m_SortingLayer: 1
   m_SortingOrder: -1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 0.49803922}
@@ -667,7 +667,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5575281117498577812}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Minigame zigzag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -707,7 +707,7 @@ GameObject:
   - component: {fileID: 5575281117561609992}
   - component: {fileID: 5575281117561609993}
   - component: {fileID: 5575281117561609994}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -767,8 +767,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1927678641
+  m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 01edcb0832c9e1f42ae4e8ac27854fe6, type: 3}
   m_Color: {r: 0.9622642, g: 0.9622642, b: 0.9622642, a: 1}
@@ -892,7 +892,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5575281117719160981}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -936,7 +936,7 @@ GameObject:
   - component: {fileID: 5575281117722405423}
   - component: {fileID: 5575281117722405416}
   - component: {fileID: 5575281117722405417}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Minigame Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1052,7 +1052,7 @@ GameObject:
   - component: {fileID: 5575281117772620806}
   - component: {fileID: 5575281117772620804}
   - component: {fileID: 5575281117772620805}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Score good text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1189,7 +1189,7 @@ GameObject:
   - component: {fileID: 5575281117899028633}
   - component: {fileID: 5575281117899028639}
   - component: {fileID: 5575281117899028632}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: fabric
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1250,8 +1250,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1927678641
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c92f01a7c8fcaf549a7ddc8dde31a004, type: 3}
   m_Color: {r: 0.447796, g: 0.8490566, b: 0.41251338, a: 1}
@@ -1300,7 +1300,7 @@ GameObject:
   - component: {fileID: 5575281117940425528}
   - component: {fileID: 5575281117940425534}
   - component: {fileID: 5575281117940425535}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Tutorial Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1440,7 +1440,7 @@ GameObject:
   - component: {fileID: 5575281117944009200}
   - component: {fileID: 5575281117944009201}
   - component: {fileID: 5575281117944009202}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Start Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1571,7 +1571,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5575281117989900118}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1612,7 +1612,7 @@ GameObject:
   - component: {fileID: 5575281118314557071}
   - component: {fileID: 5575281118314557064}
   - component: {fileID: 8113120818237270327}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Line
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1672,8 +1672,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1927678641
+  m_SortingLayer: 1
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: af16c54e71df52c48bfed2ccb15637d3, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 0.5529412}
@@ -1855,7 +1855,7 @@ GameObject:
   - component: {fileID: 5575281118689316715}
   - component: {fileID: 5575281118689316713}
   - component: {fileID: 5575281118689316714}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Score Good
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1932,7 +1932,7 @@ GameObject:
   - component: {fileID: 5575281118735096575}
   - component: {fileID: 5575281118735096573}
   - component: {fileID: 5575281118735096574}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Score good text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2068,7 +2068,7 @@ GameObject:
   - component: {fileID: 5575281118746187498}
   - component: {fileID: 5575281118746187499}
   - component: {fileID: 5575281118746187412}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2201,7 +2201,7 @@ GameObject:
   - component: {fileID: 5575281118805623183}
   - component: {fileID: 5575281118805623181}
   - component: {fileID: 5575281118805623182}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Score Bad
   m_TagString: Untagged
   m_Icon: {fileID: 0}

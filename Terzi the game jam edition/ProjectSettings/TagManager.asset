@@ -17,7 +17,7 @@ TagManager:
   - Water
   - UI
   - Materials
-  - 
+  - minigame
   - 
   - 
   - 
@@ -45,4 +45,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: minigame1
+    uniqueID: 1927678641
     locked: 0
