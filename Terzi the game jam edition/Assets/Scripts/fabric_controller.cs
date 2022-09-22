@@ -8,8 +8,10 @@ public class fabric_controller : MonoBehaviour
     [SerializeField] GameObject endCanvas;
     [SerializeField] GameObject needle;
     [SerializeField] GameObject badScore, goodScore, aveScore;
+    [SerializeField] Sprite fabYellow, fabGreen, fabPink, fabWhite, fabBlue;
     public float speedHor;
     public string quality;
+    string fabColor;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +24,26 @@ public class fabric_controller : MonoBehaviour
     {
         transform.Translate(Input.GetAxis("Mouse X") * speedHor * Time.deltaTime, Time.deltaTime * speedVer, 0, Space.World);
         quality = needle.GetComponent<needle_controller>().qua;
+        if (fabColor == "green")
+        {
+            gameObject.GetComponent<SpriteRenderer>().sprite = fabGreen;
+        }
+        if (fabColor == "blue")
+        {
+            gameObject.GetComponent<SpriteRenderer>().sprite = fabBlue;
+        }
+        if (fabColor == "pink")
+        {
+            gameObject.GetComponent<SpriteRenderer>().sprite = fabPink;
+        }
+        if (fabColor == "yellow")
+        {
+            gameObject.GetComponent<SpriteRenderer>().sprite = fabYellow;
+        }
+        if (fabColor == "white")
+        {
+            gameObject.GetComponent<SpriteRenderer>().sprite = fabWhite;
+        }
     }
     private void OnBecameInvisible()
     {
