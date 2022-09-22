@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 129975597}
   - component: {fileID: 129975599}
   - component: {fileID: 129975598}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 173962652}
   - component: {fileID: 173962654}
   - component: {fileID: 173962653}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Score good text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -284,7 +284,7 @@ GameObject:
   - component: {fileID: 323648058}
   - component: {fileID: 323648057}
   - component: {fileID: 323648056}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -415,7 +415,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 338132782}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -457,7 +457,7 @@ GameObject:
   - component: {fileID: 909984743}
   - component: {fileID: 909984745}
   - component: {fileID: 909984744}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Score good text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -594,7 +594,7 @@ GameObject:
   - component: {fileID: 1118461587}
   - component: {fileID: 1118461589}
   - component: {fileID: 1118461588}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Score Good
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -671,7 +671,7 @@ GameObject:
   - component: {fileID: 1146851214}
   - component: {fileID: 1146851216}
   - component: {fileID: 1146851215}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -804,7 +804,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1163570449}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -844,7 +844,7 @@ GameObject:
   - component: {fileID: 1250239789}
   - component: {fileID: 1250239791}
   - component: {fileID: 1250239790}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Score Average
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -923,7 +923,7 @@ GameObject:
   - component: {fileID: 1293540213}
   - component: {fileID: 1293540212}
   - component: {fileID: 1293540216}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Minigame Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1039,7 +1039,7 @@ GameObject:
   - component: {fileID: 1457574623}
   - component: {fileID: 1457574625}
   - component: {fileID: 1457574624}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Tutorial Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1178,7 +1178,7 @@ GameObject:
   - component: {fileID: 1571096512}
   - component: {fileID: 1571096514}
   - component: {fileID: 1571096513}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Score good text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1313,7 +1313,7 @@ GameObject:
   - component: {fileID: 2008402021}
   - component: {fileID: 2008402023}
   - component: {fileID: 2008402022}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Score Bad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1391,7 +1391,7 @@ GameObject:
   - component: {fileID: 2077428935}
   - component: {fileID: 2077428934}
   - component: {fileID: 2077428933}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Start Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1525,7 +1525,7 @@ GameObject:
   - component: {fileID: 7872146415441187201}
   - component: {fileID: 2982098352174173859}
   - component: {fileID: 5831222394599017178}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Line (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1658,7 +1658,7 @@ GameObject:
   - component: {fileID: 7561826804073359605}
   - component: {fileID: 5226476444774441870}
   - component: {fileID: 5593617080676276760}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Line (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1794,7 +1794,7 @@ GameObject:
   - component: {fileID: 4335665192344147455}
   - component: {fileID: 8114223670820967011}
   - component: {fileID: 6922583781379197333}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1982,7 +1982,7 @@ GameObject:
   - component: {fileID: 1932213129209482678}
   - component: {fileID: 3406362925188635678}
   - component: {fileID: 9074618769261345414}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Line (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2115,7 +2115,7 @@ GameObject:
   - component: {fileID: 6479099620441992087}
   - component: {fileID: 5099218394787636462}
   - component: {fileID: 8575651747427763248}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Line (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2245,7 +2245,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6703552174882064545}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Minigame line
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2282,7 +2282,7 @@ GameObject:
   - component: {fileID: 6703552175222986709}
   - component: {fileID: 6703552175222986708}
   - component: {fileID: 6703552175222986710}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Line
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2414,7 +2414,7 @@ GameObject:
   - component: {fileID: 6703552175620974362}
   - component: {fileID: 6703552175620974361}
   - component: {fileID: 6703552175620974363}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: fabric
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2530,7 +2530,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8197839576365280708}
   - component: {fileID: 8348593285265581739}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2554,7 +2554,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -434.16, y: -224.82}
+  m_AnchoredPosition: {x: -549.7, y: -260.5}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &8348593285265581739
@@ -2621,7 +2621,7 @@ GameObject:
   - component: {fileID: 5388713519288386690}
   - component: {fileID: 6377904101994695497}
   - component: {fileID: 3806546461075026010}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Line (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2752,7 +2752,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2351703809729072798}
   - component: {fileID: 759986289682655193}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: needle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2839,7 +2839,7 @@ GameObject:
   - component: {fileID: 8161514684534343033}
   - component: {fileID: 7073987083783838777}
   - component: {fileID: 558198271534163421}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Line (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
