@@ -6,18 +6,23 @@ public class needle_controller : MonoBehaviour
 {
     Animator myAnimator;
     [SerializeField] float score = 0, badQua = 958, aveQua = 1916;
+    GameObject myIron;
     public bool incScore, decScore, rightNeedle, didIron;
     public string qua;
     // Start is called before the first frame update
     void Start()
     {
+        myIron = GameObject.Find("Iron");
         myAnimator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(!myIron.GetComponent<IronCt>().canIron)
+        {
+            didIron = true;
+        }
         if (Input.GetButton("needlekey"))
         {
             myAnimator.GetComponent<Animator>().enabled = true;

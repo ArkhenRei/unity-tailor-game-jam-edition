@@ -579,7 +579,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5575281117461939994}
   - component: {fileID: 5575281117461939993}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -593,7 +593,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5575281117461939995}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 44.22043, y: 44.22043, z: 44.22043}
   m_ConstrainProportionsScale: 0
