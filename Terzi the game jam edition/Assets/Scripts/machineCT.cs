@@ -48,13 +48,5 @@ public class machineCT : MonoBehaviour
             button.SetActive(true);
             
         }
-        if (collision.gameObject.tag == "rope")
-        {
-            MoneyCT.GetComponent<MoneyCT>().usedRope++;
-            gameObject.GetComponent<SpriteRenderer>().sprite = highlight;
-            canPlay = true;
-            button.SetActive(true);
-
-        }
     }
 }

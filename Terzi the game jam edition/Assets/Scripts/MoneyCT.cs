@@ -6,9 +6,6 @@ public class MoneyCT : MonoBehaviour
 {
    public GameObject[] portraits = new GameObject[5];
     public bool[] isPortraits = new bool[5];
-    public string[] clothes = new string[3];
-    public string[] colours = new string[4];
-    public string[] hasartype = new string[3];
     public int[] sort = new int[5];
 
     public GameObject gameCT;
@@ -41,16 +38,9 @@ public class MoneyCT : MonoBehaviour
     void Start()
     {
         cust = 1;
-        clothes[0] = "Ceket";
-        clothes[1] = "hayalet";
-        clothes[2] = "pantolon";
-        colours[0] = "mavi";
-        colours[1] = "pembe";
-        colours[2] = "sari";
-        colours[3] = "yesil";
-        hasartype[0] = "delik";
-        hasartype[1] = "yirtik";
-        hasartype[2] = "both";
+        
+        
+        
         for (int i = 0; i < 5; i++)
         {
             isPortraits[i] = false;
@@ -67,20 +57,27 @@ public class MoneyCT : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (cust ==0)
+        didMachine = machine.GetComponent<machineCT>().isCompleted;
+        if (didMachine)
+        {
+            foreach (var item in portraits)
+            {
+                item.SetActive(false);
+            }
+        }
+        if (cust ==0 && !didMachine)
         {
             cust = 1;
         }
-        if (cust== 1)
+        if (cust== 1 && !didMachine)
         {
             portraits[sort[0]].SetActive(true);
             
             currentCust = 1;
         }
-        if (cust > currentCust && cust <=5)
+        if (cust > currentCust && cust <=5 && !didMachine)
         {
             portraits[sort[cust-1]].SetActive(true);
-            portraits[sort[cust-2]].SetActive(false);
             currentCust = cust;
         }
 
@@ -96,13 +93,14 @@ public class MoneyCT : MonoBehaviour
 
     public void NextCustomer()
     {
-        didMachine = machine.GetComponent<machineCT>().isCompleted;
+        
         if (didMachine)
         {
             cust++;
             iron.GetComponent<IronCt>().canIron = true;
             machine.GetComponent<machineCT>().canPlay = false;
             machine.GetComponent<machineCT>().isCompleted = false;
+            GetComponent<customer>().chooseClothes();
         }
         
     }

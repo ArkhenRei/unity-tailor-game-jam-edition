@@ -9,12 +9,12 @@ public class IronCt : MonoBehaviour
     public Vector3 rotationIron;
     public ParticleSystem steam;
     public Vector2 velocityIron;
-    public GameObject tamirli;
-    public GameObject hasarli;
     public GameObject gameCT;
     public int cust;
     public int samecust =1;
     public bool canIron= false;
+    public Sprite highlighted;
+    public Sprite normal;
 
     private void Awake()
     {
@@ -25,7 +25,16 @@ public class IronCt : MonoBehaviour
     }
     void Update()
     {
-        
+        if (canIron)
+        {
+            GetComponent<SpriteRenderer>().sprite = normal;
+        }
+        else
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+            _dragging = false;
+            GetComponent<SpriteRenderer>().sprite = highlighted;
+        }
        
         if (!_dragging)
         {
@@ -62,7 +71,7 @@ public class IronCt : MonoBehaviour
             if (canIron == true)
             {
                 Invoke("playSteam", 1f);
-                hasarli = collision.gameObject;
+               
             }
           
         }
@@ -79,8 +88,6 @@ public class IronCt : MonoBehaviour
     {
 
         steam.Play();
-        hasarli.SetActive(false);
-        tamirli.gameObject.SetActive(true);
         canIron=false;
         if (samecust>5)
         {
