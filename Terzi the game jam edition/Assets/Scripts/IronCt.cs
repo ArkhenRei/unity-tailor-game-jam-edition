@@ -9,34 +9,23 @@ public class IronCt : MonoBehaviour
     public Vector3 rotationIron;
     public ParticleSystem steam;
     public Vector2 velocityIron;
-    public GameObject gameCT;
-    public int cust;
-    public int samecust =1;
-    public bool canIron= false;
     public Sprite highlighted;
-    public Sprite normal;
+    public static Sprite normal;
     public AudioSource steamS;
+    public static SpriteRenderer rend;
 
     private void Awake()
     {
-        canIron = true;
+        normal = rend.sprite;
+        rend = GetComponent<SpriteRenderer>();
+        screenCT.canIron = true;
         velocityIron = new Vector2(0, 0);
         rotationIron = new Vector3(15f, 0f, 45f);
         defaultPosition = transform.position;
     }
     void Update()
     {
-        if (canIron)
-        {
-            GetComponent<SpriteRenderer>().sprite = normal;
-        }
-        else
-        {
-            transform.rotation = Quaternion.Euler(0, 0, 0);
-            _dragging = false;
-            GetComponent<SpriteRenderer>().sprite = highlighted;
-        }
-       
+      
         if (!_dragging)
         {
             transform.position = Vector3.Lerp(transform.position, defaultPosition, 3f * Time.deltaTime);
@@ -67,9 +56,9 @@ public class IronCt : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "cloth")
+        if (collision.gameObject.tag != "fabric" && collision.gameObject.tag != "machine")
         {
-            if (canIron == true)
+            if (screenCT.canIron == true)
             {
                 Invoke("playSteam", 1f);
                
@@ -80,7 +69,7 @@ public class IronCt : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "cloth")
+        if (collision.gameObject.tag != "fabric" && collision.gameObject.tag != "machine")
         {
             CancelInvoke();
         }
@@ -89,11 +78,13 @@ public class IronCt : MonoBehaviour
     {
         steamS.Play();
         steam.Play();
-        canIron=false;
-        if (samecust>5)
-        {
-            samecust = 1;
-        }
+        screenCT.canIron =false;
+        screenCT.didIron = true;
+        transform.rotation = Quaternion.Euler(0, 0, 0);
+        _dragging = false;
+        GetComponent<SpriteRenderer>().sprite = highlighted;
+
+
     }
   
 }

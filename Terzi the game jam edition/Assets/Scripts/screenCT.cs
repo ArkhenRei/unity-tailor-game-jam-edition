@@ -5,13 +5,72 @@ using UnityEngine.SceneManagement;
 
 public class screenCT : MonoBehaviour
 {
-    // Start is called before the first frame update
-     public void LoadScene()
+    private static screenCT instance = null;
+
+    public static int day = 1;
+    public static int Totalmoney = 0;
+    public static int maxDay = 3;
+    public static int maxCustomer = 5;
+    public static int currentCustomer = 1;
+    public static int earnedToday = 0;
+
+    public static bool didIron = false;
+    public static bool didFabric = false;
+    public static bool didPlay = false;
+    public static bool didTalk = false;
+    public static bool isNextDay = false;
+    public static bool canIron = true;
+
+
+
+    private void Awake()
     {
-        SceneManager.LoadScene(1);
+        DontDestroyOnLoad(this);
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
     }
+    private void Update()
+    {
+        if (currentCustomer>5)
+        {
+            currentCustomer = 0;
+            day++;
+            isNextDay = true;
+        }
+    }
+
+ 
+   
+    public static void nextCustomer()
+    {
+        currentCustomer++;
+        didFabric = false;
+        didIron = false;
+        didPlay = false;
+        didTalk = false;
+        canIron = true;
+        machineCT.rend.sprite = machineCT.normal;
+        IronCt.rend.sprite = IronCt.normal;
+       
+    }
+
+
+
     public void close()
     {
         Application.Quit();
     }
+
+    public void LoadScene()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+
 }
