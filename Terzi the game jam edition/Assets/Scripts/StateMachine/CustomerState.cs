@@ -66,10 +66,6 @@ public class CustomerState : GameBaseState
 
     public override void UpdateState(GameStateManager game)
     {
-        if (screenCT.isNextDay)
-        {
-            game.NextDay();
-        }
         if (screenCT.didTalk)
         {
             game.SwitchState(game.ironingState);

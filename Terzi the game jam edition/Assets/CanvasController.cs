@@ -10,6 +10,14 @@ public class CanvasController : MonoBehaviour
     public GameObject PauseMenuUI;
 
 
+    public void NextDay()
+    {
+
+        NextDayUI.SetActive(true);
+        screenCT.isNextDay = false;
+    }
+
+
 
 
 

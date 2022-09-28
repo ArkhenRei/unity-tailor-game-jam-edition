@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GameStateManager : MonoBehaviour
 {
-    public GameObject NextDayUI;
     public GameBaseState currentState;
     public PlayState playingState = new PlayState();
     public IronState ironingState = new IronState();
@@ -27,11 +26,6 @@ public class GameStateManager : MonoBehaviour
         currentState = state;
         state.EnterState(this);
     }
-    public void NextDay()
-    {
-
-        NextDayUI.SetActive(true);
-        screenCT.isNextDay = false;
-    }
+    
 
 }
