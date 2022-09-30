@@ -13,8 +13,9 @@ public class machineCT : MonoBehaviour
     // Start is called before the first frame update
     public void Awake()
     {
-        normal = rend.sprite;
         rend = GetComponent<SpriteRenderer>();
+        normal = rend.sprite;
+        
     }
 
     public void Update()

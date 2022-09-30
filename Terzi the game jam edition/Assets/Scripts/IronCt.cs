@@ -16,8 +16,9 @@ public class IronCt : MonoBehaviour
 
     private void Awake()
     {
-        normal = rend.sprite;
         rend = GetComponent<SpriteRenderer>();
+        normal = rend.sprite;
+        
         screenCT.canIron = true;
         velocityIron = new Vector2(0, 0);
         rotationIron = new Vector3(15f, 0f, 45f);
