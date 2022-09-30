@@ -1028,14 +1028,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartGame: {fileID: 1163570448}
   EndGame: {fileID: 338132781}
-  iron: {fileID: 0}
-  a: {fileID: 0}
-  b: {fileID: 0}
-  c: {fileID: 0}
-  needle: {fileID: 0}
-  machine: {fileID: 0}
-  fabric: {fileID: 0}
-  sew: {fileID: 0}
 --- !u!1 &1457574622
 GameObject:
   m_ObjectHideFlags: 0
@@ -1923,10 +1915,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83f39083102e26d4a9472eca86b8d5fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myAnimator: {fileID: 0}
   score: 0
-  badQua: 3054
-  aveQua: 6109
+  badQua: 600
+  aveQua: 1000
   incScore: 0
   decScore: 0
   rightNeedle: 0
@@ -2423,6 +2414,8 @@ GameObject:
   - component: {fileID: 6703552175620974362}
   - component: {fileID: 6703552175620974361}
   - component: {fileID: 6703552175620974363}
+  - component: {fileID: 386985209}
+  - component: {fileID: 386985210}
   m_Layer: 7
   m_Name: fabric
   m_TagString: Untagged
@@ -2526,14 +2519,55 @@ MonoBehaviour:
   fabPink: {fileID: 21300000, guid: 83c8caec29ed2e64b96427fa47c668ad, type: 3}
   fabWhite: {fileID: 21300000, guid: 9a208a314c837484f937162b674b49d3, type: 3}
   fabBlue: {fileID: 21300000, guid: ff073afc047702d44bddea944fb1dea3, type: 3}
-  canvas: {fileID: 0}
   speedHor: 25
   quality: 
-  defaultPos: {x: 0, y: 0, z: 0}
-  start: {fileID: 0}
-  exit: {fileID: 0}
-  startBut: {fileID: 0}
-  exitBut: {fileID: 0}
+--- !u!50 &386985209
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6703552175620974360}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &386985210
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6703552175620974360}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0064222813, y: -1.0812888}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.11, y: 2.2}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.097155, y: 0.037422657}
+  m_EdgeRadius: 0
 --- !u!1 &8170657470664390435
 GameObject:
   m_ObjectHideFlags: 0
@@ -2766,6 +2800,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2351703809729072798}
   - component: {fileID: 759986289682655193}
+  - component: {fileID: 734209411}
+  - component: {fileID: 734209410}
   m_Layer: 7
   m_Name: needle
   m_TagString: Untagged
@@ -2841,3 +2877,50 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &734209411
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9077149219042123366}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &734209410
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9077149219042123366}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 3.8795362, y: 0.08544183}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 11.65, y: 4.31}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 19.409073, y: 4.139117}
+  m_EdgeRadius: 0

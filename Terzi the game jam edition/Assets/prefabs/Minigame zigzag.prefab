@@ -527,7 +527,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 5575281117722405417}
         m_TargetAssemblyTypeName: button_controller, Assembly-CSharp
         m_MethodName: endGame
         m_Mode: 1
@@ -917,6 +917,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5575281117263313460}
   - component: {fileID: 5575281117263313419}
+  - component: {fileID: 1493824329}
+  - component: {fileID: 1493824330}
   m_Layer: 7
   m_Name: needle
   m_TagString: Untagged
@@ -992,6 +994,53 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &1493824329
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5575281117263313461}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &1493824330
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5575281117263313461}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 11.65, y: 4.31}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 11.65, y: 4.31}
+  m_EdgeRadius: 0
 --- !u!1 &5575281117498577813
 GameObject:
   m_ObjectHideFlags: 0
@@ -1162,7 +1211,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83f39083102e26d4a9472eca86b8d5fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myAnimator: {fileID: 0}
   score: 0
   badQua: 4500
   aveQua: 8000
@@ -1334,16 +1382,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c88d4614a525eda45a3599511a231f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartGame: {fileID: 0}
-  EndGame: {fileID: 0}
-  iron: {fileID: 0}
-  a: {fileID: 0}
-  b: {fileID: 0}
-  c: {fileID: 0}
-  needle: {fileID: 0}
-  machine: {fileID: 0}
-  fabric: {fileID: 0}
-  sew: {fileID: 0}
+  StartGame: {fileID: 7002802538649893828}
+  EndGame: {fileID: 2107885289277627699}
 --- !u!1 &5575281117899028634
 GameObject:
   m_ObjectHideFlags: 0
@@ -1355,6 +1395,8 @@ GameObject:
   - component: {fileID: 5575281117899028633}
   - component: {fileID: 5575281117899028639}
   - component: {fileID: 5575281117899028632}
+  - component: {fileID: 1022409845}
+  - component: {fileID: 1022409846}
   m_Layer: 7
   m_Name: fabric
   m_TagString: Untagged
@@ -1443,24 +1485,65 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedVer: 0.85
-  endCanvas: {fileID: 0}
+  endCanvas: {fileID: 2107885289277627699}
   needle: {fileID: 5575281117561609995}
-  badScore: {fileID: 0}
-  goodScore: {fileID: 0}
-  aveScore: {fileID: 0}
+  badScore: {fileID: 4422657110317660428}
+  goodScore: {fileID: 4913940601814387905}
+  aveScore: {fileID: 3610774353526050018}
   fabYellow: {fileID: 21300000, guid: 1ba39892e04b89a4e959ddaeae51309a, type: 3}
   fabGreen: {fileID: 21300000, guid: c92f01a7c8fcaf549a7ddc8dde31a004, type: 3}
   fabPink: {fileID: 21300000, guid: 83c8caec29ed2e64b96427fa47c668ad, type: 3}
   fabWhite: {fileID: 21300000, guid: 9a208a314c837484f937162b674b49d3, type: 3}
   fabBlue: {fileID: 21300000, guid: ff073afc047702d44bddea944fb1dea3, type: 3}
-  canvas: {fileID: 0}
   speedHor: 25
   quality: 
-  defaultPos: {x: 0, y: 0, z: 0}
-  start: {fileID: 0}
-  exit: {fileID: 0}
-  startBut: {fileID: 0}
-  exitBut: {fileID: 0}
+--- !u!50 &1022409845
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5575281117899028634}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &1022409846
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5575281117899028634}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -1.0782111}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.11, y: 2.2}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.11, y: 0.04357803}
+  m_EdgeRadius: 0
 --- !u!1 &5575281118314557067
 GameObject:
   m_ObjectHideFlags: 0
@@ -2135,7 +2218,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 5575281117722405417}
         m_TargetAssemblyTypeName: button_controller, Assembly-CSharp
         m_MethodName: startGame
         m_Mode: 1

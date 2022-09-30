@@ -4,16 +4,14 @@ using UnityEngine;
 
 public class needle_controller : MonoBehaviour
 {
-    public Animator myAnimator;
-    public float score = 0, badQua = 958, aveQua = 1916;
-    GameObject myGameController;
+    Animator myAnimator;
+    [SerializeField] float score = 0, badQua = 958, aveQua = 1916;
     public bool incScore, decScore, rightNeedle, didIron;
     public string qua;
     // Start is called before the first frame update
     void Start()
     {
-        
-        myGameController = GameObject.Find("GameController");
+        myAnimator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -37,10 +35,23 @@ public class needle_controller : MonoBehaviour
             myAnimator.GetComponent<Animator>().enabled = false;
         }
        
-      
-
-        
-
+        if (!didIron && !rightNeedle)
+        {
+            qua = "bad";
+        }
+        if (didIron || rightNeedle)
+        {
+            if (score <= badQua)
+            {
+                qua = "bad";
+            }
+            else
+            {
+                qua = "ave";
+            }
+        }
+        if (didIron && rightNeedle)
+        {
             if (score <= badQua)
             {
                 qua = "bad";
@@ -53,7 +64,7 @@ public class needle_controller : MonoBehaviour
             {
                 qua = "good";
             }
-   
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)

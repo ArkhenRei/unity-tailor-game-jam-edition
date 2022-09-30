@@ -1086,7 +1086,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 6818746140766540493}
         m_TargetAssemblyTypeName: button_controller, Assembly-CSharp
         m_MethodName: startGame
         m_Mode: 1
@@ -1108,6 +1108,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6690674910750462161}
   - component: {fileID: 8111129307245933590}
+  - component: {fileID: 1315528312445501054}
+  - component: {fileID: 4142915425105335573}
   m_Layer: 7
   m_Name: needle
   m_TagString: Untagged
@@ -1183,6 +1185,53 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1315528312445501054
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5172568424155768256}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 2.6759157, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 11.65, y: 4.31}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 17.00183, y: 4.31}
+  m_EdgeRadius: 0
+--- !u!50 &4142915425105335573
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5172568424155768256}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &5457401783442325800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1357,7 +1406,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83f39083102e26d4a9472eca86b8d5fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myAnimator: {fileID: 0}
   score: 0
   badQua: 3054
   aveQua: 6109
@@ -2624,6 +2672,8 @@ GameObject:
   - component: {fileID: 6818746140640247933}
   - component: {fileID: 6818746140640247931}
   - component: {fileID: 6818746140640247932}
+  - component: {fileID: 1742205194775476369}
+  - component: {fileID: 3305915504189954934}
   m_Layer: 7
   m_Name: fabric
   m_TagString: Untagged
@@ -2722,24 +2772,65 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedVer: 0.85
-  endCanvas: {fileID: 0}
+  endCanvas: {fileID: 3962948535851456154}
   needle: {fileID: 5844207520175520236}
-  badScore: {fileID: 0}
-  goodScore: {fileID: 0}
-  aveScore: {fileID: 0}
+  badScore: {fileID: 3349468220609590615}
+  goodScore: {fileID: 215469356533409471}
+  aveScore: {fileID: 7276721763409357922}
   fabYellow: {fileID: 21300000, guid: 1ba39892e04b89a4e959ddaeae51309a, type: 3}
   fabGreen: {fileID: 21300000, guid: c92f01a7c8fcaf549a7ddc8dde31a004, type: 3}
   fabPink: {fileID: 21300000, guid: 83c8caec29ed2e64b96427fa47c668ad, type: 3}
   fabWhite: {fileID: 21300000, guid: 9a208a314c837484f937162b674b49d3, type: 3}
   fabBlue: {fileID: 21300000, guid: ff073afc047702d44bddea944fb1dea3, type: 3}
-  canvas: {fileID: 0}
   speedHor: 25
   quality: 
-  defaultPos: {x: 0, y: 0, z: 0}
-  start: {fileID: 0}
-  exit: {fileID: 0}
-  startBut: {fileID: 0}
-  exitBut: {fileID: 0}
+--- !u!61 &1742205194775476369
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6818746140640247934}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -1.0786588}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.11, y: 2.2}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.11, y: 0.04268217}
+  m_EdgeRadius: 0
+--- !u!50 &3305915504189954934
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6818746140640247934}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &6818746140724044237
 GameObject:
   m_ObjectHideFlags: 0
@@ -3003,16 +3094,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c88d4614a525eda45a3599511a231f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartGame: {fileID: 0}
-  EndGame: {fileID: 0}
-  iron: {fileID: 0}
-  a: {fileID: 0}
-  b: {fileID: 0}
-  c: {fileID: 0}
-  needle: {fileID: 0}
-  machine: {fileID: 0}
-  fabric: {fileID: 0}
-  sew: {fileID: 0}
+  StartGame: {fileID: 5457401783442325800}
+  EndGame: {fileID: 3962948535851456154}
 --- !u!1 &6818746141153030420
 GameObject:
   m_ObjectHideFlags: 0
@@ -3502,7 +3585,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 6818746140766540493}
         m_TargetAssemblyTypeName: button_controller, Assembly-CSharp
         m_MethodName: endGame
         m_Mode: 1
