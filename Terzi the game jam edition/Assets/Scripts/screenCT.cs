@@ -20,6 +20,8 @@ public class screenCT : MonoBehaviour
     public static bool didTalk = false;
     public static bool isNextDay = false;
     public static bool canIron = true;
+    public static bool play = false;
+    [SerializeField] GameObject minpref;
 
 
 
@@ -43,6 +45,10 @@ public class screenCT : MonoBehaviour
             day++;
             isNextDay = true;
         }
+        if (play)
+        {
+            Instantiate(minpref);
+        }
     }
 
  
@@ -55,6 +61,7 @@ public class screenCT : MonoBehaviour
         didPlay = false;
         didTalk = false;
         canIron = true;
+        play = false;
         machineCT.rend.sprite = machineCT.normal;
         IronCt.rend.sprite = IronCt.normal;
        
